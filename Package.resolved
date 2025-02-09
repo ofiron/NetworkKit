@@ -1,0 +1,24 @@
+{
+  "originHash" : "f607de01fc0aac6edd5757b77b8664bf7edd354941b2d34f502a532273737fac",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "foundationcorekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ofiron/FoundationCoreKit",
+      "state" : {
+        "revision" : "3a647c58a96e7b41bf99a56e5dd57274b216d22a",
+        "version" : "0.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
