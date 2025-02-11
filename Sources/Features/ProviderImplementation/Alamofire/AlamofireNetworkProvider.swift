@@ -50,14 +50,12 @@ extension AlamofireNetworkProvider: NetworkProviding {
 
         var requestHeaders = HTTPHeaders()
         if let authorizationType = configuration.authorization {
-            requestHeaders[authorizationType.headerField] = authorizationType.headerValue
+            requestHeaders.add(authorizationType.headerField, value: authorizationType.headerValue)
         }
         
-        requestHeaders.merge(headers ?? [:]) { _, new in
-            new
-        }
+        requestHeaders.merge(headers)
 
-        let convertedHeaders: [Alamofire.HTTPHeader] = requestHeaders.map { Alamofire.HTTPHeader(name: $0.key, value: $0.value) }
+        let convertedHeaders: [Alamofire.HTTPHeader] = [] //requestHeaders.map { Alamofire.HTTPHeader(name: $0.key, value: $0.value) }
         let alamofireHeaders: [Alamofire.HTTPHeader] = convertedHeaders
         let httpHeaders = Alamofire.HTTPHeaders(alamofireHeaders)
         
@@ -94,14 +92,12 @@ extension AlamofireNetworkProvider: NetworkProviding {
 
         var requestHeaders = HTTPHeaders()
         if let authorizationType = configuration.authorization {
-            requestHeaders[authorizationType.headerField] = authorizationType.headerValue
+            requestHeaders.addIfNotPresent(authorizationType.headerField, value: authorizationType.headerValue)
         }
+
+        requestHeaders.merge(request.headers)
         
-        requestHeaders.merge(request.headers ?? [:]) { _, new in
-            new
-        }
-        
-        let convertedHeaders: [Alamofire.HTTPHeader] = requestHeaders.map { Alamofire.HTTPHeader(name: $0.key, value: $0.value) }
+        let convertedHeaders: [Alamofire.HTTPHeader] = [] //requestHeaders.map { Alamofire.HTTPHeader(name: $0.key, value: $0.value) }
         let alamofireHeaders: [Alamofire.HTTPHeader] = convertedHeaders
         let httpHeaders = Alamofire.HTTPHeaders(alamofireHeaders)
         

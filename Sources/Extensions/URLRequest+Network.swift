@@ -28,18 +28,16 @@ extension URLRequest {
         self = URLRequest(url: url)
         
         // Merge provided headers with authorization headers (if any)
-        var headers = headers ?? [:]
+        var headers = headers ?? HTTPHeaders()
         
         // Add authorization header if provided and not already in headers
-        if let authorizationType, headers[authorizationType.headerField] == nil {
-            headers[authorizationType.headerField] = authorizationType.headerValue
+        if let authorizationType {
+            headers.addIfNotPresent(authorizationType.headerField, value: authorizationType.headerValue)
         }
         
         // Set the headers for the request
-        if headers.isEmpty == false {
-            for header in headers {
-                setValue(header.value, forHTTPHeaderField: header.key)
-            }
+        for header in headers.dictionary {
+            setValue(header.value, forHTTPHeaderField: header.key)
         }
         
         // Set the request body if provided
