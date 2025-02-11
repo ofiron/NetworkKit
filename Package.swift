@@ -16,7 +16,9 @@ let package = Package(
         // Local path for development
 //        .package(path: "../FoundationCoreKit"),
         // Version
-        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.2"),
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", exact: "0.0.2"),
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", from: "0.0.3"),
+        .package(url: "https://github.com/ofiron/FoundationCoreKit", .upToNextMinor(from: "0.0.3")),
         // dev branch
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev"),
 
