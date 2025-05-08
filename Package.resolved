@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ofiron/FoundationCoreKit",
       "state" : {
-        "revision" : "af034e4aa0f9a07ce8fec358237f691158ad2aa2",
-        "version" : "0.0.3"
+        "revision" : "362d078ee55524b90f66b328b3ca92b444212504",
+        "version" : "0.0.5"
       }
     }
   ],

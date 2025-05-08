@@ -21,6 +21,7 @@ let package = Package(
         .package(url: "https://github.com/ofiron/FoundationCoreKit", .upToNextMinor(from: "0.0.3")),
         // dev branch
 //        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "dev"),
+//        .package(url: "https://github.com/ofiron/FoundationCoreKit", branch: "additions"),
 
         // Externals
         .package(url: "https://github.com/Alamofire/Alamofire", .upToNextMajor(from: "5.10.2"))
